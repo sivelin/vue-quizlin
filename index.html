@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="./styles/style.css"/>
+</head>
+<body>
+  <header>
+      Quizlin
+  </header>
+  
+  <div id="app"> 
+    <span class="big-text" v-bind:title="message">
+        Viel Spass!
+    </span>
+    <img src="images/standing-15.svg" width="100"/>
+    <img src="images/standing-19.svg" width="100"/>
+    <div>
+      <button v-on:click="show = !show" v-if="show">Weniger Infos</button>
+      <button v-on:click="show = !show" v-else>Mehr Infos</button>
+      <p v-if="show">Work in Progress: Hier werden einige simple Quiz entstehen.</p>
+    </div>
+  </div>
+  <div id="quizzes">
+    <transition name="fade">
+    </transition>
+    <div v-for="item in items" :key="item.message" class="quiz">
+      <b>{{ item.title }} </b>
+      <i>{{ item.description }} </i>
+    </div>
+  </div>
+
+  <script src="script.js">
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/*variables*/
+body {
+  background: #F4F4F4;
+  margin: 0em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background: #027552;
+  color: #F4F4F4;
+  padding: 1em;
+}
+
+#app {
+  padding: 1em;
+}
+
+/*.quizzes {
+    float: center;
+    width: 100%;
+}*/
+.big-text {
+  font-size: 5em;
+  font-weight: bold;
+  color: #027552;
+}
+
+.quiz {
+  float: left;
+  padding: 1em;
+  margin: 1em;
+  background: #FFE794;
+  color: #C97800;
+}
+
+.fade-enter-active, .fade-leave-active {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+button {
+  color: #C97800;
+  border: none;
+  background: none;
+}
+
+button:hover {
+  background: #FFE794;
+}
+
+button:focus {
+  outline: none;
+  background-color: none;
+}
+/*# sourceMappingURL=style.css.map */
