@@ -25,12 +25,28 @@
   <div id="quizzes">
     <transition name="fade">
     </transition>
-    <div v-for="item in items" :key="item.message" class="quiz">
-      <b>{{ item.title }} </b>
-      <i>{{ item.description }} </i>
+    <div v-if="item.count >= 1" v-for="item in items" :key="item.message" class="quiz">
+      <bi>{{ item.title }} </b>
+      <i v-if="item.count > 1">{{ item.count }} Fragen</i>
+      <i v-if="item.count == 1">{{ item.count }} Frage</i>
+      <button v-on:click="setQuestionnaire(item)">Quiz starten</button>
     </div>
-  </div>
 
+    <form v-show="questionnaireActive.title != 'test'" v-on:submit.prevent="validateAnswers">
+      <h3>{{ questionnaireActive.title }}</h3>
+      <div v-for="question in questionnaireActive.questionnaire">
+        {{ question.question }}
+        <p v-for="answer in question.answers">
+          <input type="checkbox" required placeholder="item name.." v-model="itemName">
+          {{ answer }} 
+        </p>
+      </div>
+      </div>
+      
+      <button type="submit">Antworten prüfen</button>
+    </form>
+    
+  </div>
   <script src="script.js">
   </script>
 </body>
